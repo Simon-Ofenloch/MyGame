@@ -12,7 +12,7 @@ cmake_minimum_required (VERSION 3.10)
 project ("MyGame")
 
 # Fügen Sie der ausführbaren Datei dieses Projekts eine Quelle hinzu.
-add_executable (MyGame "src/main.cpp"  "src/Application/GameApplication.cpp" "src/Application/GameApplication.h" "src/Core/Player.h" "src/Core/Player.cpp" "src/Presentation/ConsolePresentation.cpp" "src/Presentation/ConsolePresentation.h")
+add_executable (MyGame "src/main.cpp"  "src/Application/GameApplication.cpp" "src/Application/GameApplication.h" "src/Presentation/ConsolePresentation.cpp" "src/Presentation/ConsolePresentation.h" "src/Core/ECS/World.cpp" "src/Core/ECS/World.h" "src/Core/ECS/Entity.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET MyGame PROPERTY CXX_STANDARD 20)

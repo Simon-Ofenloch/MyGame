@@ -1,8 +1,9 @@
 #include "GameApplication.h"
 
-GameApplication::GameApplication()
-	: player("snakak", 100, 1)
+GameApplication::GameApplication(World& world)
+	: world(world), player(world.CreateEntity()), snapshot({ 0.0f, 0.0f })
 {
+	world.AddComponent(player, snapshot);
 }
 
 Position GameApplication::GetSnapshot() const
@@ -12,11 +13,11 @@ Position GameApplication::GetSnapshot() const
 
 void GameApplication::CreateSnapshot()
 {
-	snapshot = player.GetPosition();
+	snapshot = world.GetPosition(player);
 }
 
 void GameApplication::Update()
 {
-	player.Move(1, 1);
+	// player.Move(1, 1);
 	CreateSnapshot();
 }

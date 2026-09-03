@@ -1,16 +1,17 @@
 #pragma once
-#include "../Core/Player.h"
+#include "../Core/ECS/World.h"
 
 class GameApplication
 {
 public:
-	GameApplication();
+	GameApplication(World& world);
 
 	Position GetSnapshot() const;
 	void Update();
 
 private:
 	void CreateSnapshot();
-	Player player;
 	Position snapshot;
+	World& world;
+	Entity player;
 };
